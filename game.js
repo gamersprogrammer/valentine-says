@@ -15,6 +15,17 @@ $(document).keypress(function() {
   }
 });
 
+$(".btn").on("click touchstart", function(event) {
+  var userChosenColour = $(this).attr("id");
+  userClickedPattern.push(userChosenColour);
+
+  playSound(userChosenColour);
+  animatePress(userChosenColour);
+
+  checkAnswer(userClickedPattern.length - 1);
+});
+
+
 $(".btn").click(function() {
 
   var userChosenColour = $(this).attr("id");
