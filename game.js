@@ -15,15 +15,17 @@ $(document).keypress(function() {
   }
 });
 
-$(".btn").on("click touchstart", function(event) {
-  var userChosenColour = $(this).attr("id");
-  userClickedPattern.push(userChosenColour);
-
-  playSound(userChosenColour);
-  animatePress(userChosenColour);
-
-  checkAnswer(userClickedPattern.length - 1);
+$("body").on("click touchstart", function(event) {
+  if (!started) {
+    startGame();
+  }
 });
+
+function startGame() {
+  started = true;
+  $("#level-title").text("Level " + level);
+  nextSequence();
+}
 
 
 $(".btn").click(function() {
