@@ -55,6 +55,6 @@ body {
 .foot{
   display: flex;
   justify-content: space-between;
-  margin: 10%;
+  margin: 4%;
   color: #fff;
 }
